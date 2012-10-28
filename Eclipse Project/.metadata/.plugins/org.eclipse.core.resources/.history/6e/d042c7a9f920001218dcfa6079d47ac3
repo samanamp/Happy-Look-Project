@@ -1,21 +1,12 @@
 package com.salamandroid.happylook;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.WallpaperManager;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 @SuppressLint("ShowToast")
@@ -256,30 +247,13 @@ public class MainActivity extends Activity {
     
     public void wednesdaybtn(View view){
     	pref.tglWednesday();
-    	File root = android.os.Environment.getExternalStorageDirectory();
-    	WallpaperManager wm = WallpaperManager.getInstance(this);
-    	try {
-			InputStream in = new FileInputStream(root.getAbsolutePath() + "/images/smashing.png");
-			try {
-				wm.setStream(in);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	Context context = this.getBaseContext();
-    	          
-        Toast.makeText(getApplicationContext(), "Wallpaper has been set", 10);
     }
     
     public void fridaybtn(View view){
     	pref.tglFriday();
     	
     	ImageDownloader id = new ImageDownloader();
-    	id.DownloadFromUrl("http://s1.p30download.com/users/101/ebook/science/Antegral.Khor_p30download.com.rar", "antegral.rar");
+    	id.DownloadFromUrl("http://media.smashingmagazine.com/themes/smashingv4/images/logo.png", "smashing.png");
     }
     
     @Override
