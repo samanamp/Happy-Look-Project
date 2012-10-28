@@ -1,0 +1,68 @@
+package com.salamandroid.happylook;
+
+public class Preferences {
+	protected boolean abstractp;
+	protected boolean animalsp;
+	protected boolean carsp;
+	protected boolean citiesp;
+	protected boolean filmsp;
+	protected boolean foodsp;
+	protected boolean minimalp;
+	protected boolean naturep;
+	
+	public void tglAbstract(){
+		if(this.abstractp==true)
+			this.abstractp = false;
+		else
+			this.abstractp = true;
+	}
+	
+	public void tglAnimals(){
+		if(this.animalsp==true)
+			this.animalsp= false;
+		else
+			this.animalsp = true;
+	}
+	
+	public void tglCars(){
+		if(this.carsp==true)
+			this.carsp= false;
+		else
+			this.carsp= true;
+	}
+	
+	public void tglCities(){
+		if(this.citiesp==true)
+			this.citiesp= false;
+		else
+			this.citiesp= true;
+	}
+	
+	public void tglFilms(){
+		if(this.filmsp==true)
+			this.filmsp= false;
+		else
+			this.filmsp= true;
+	}
+	
+	public void tglFoods(){
+		if(this.foodsp==true)
+			this.foodsp= false;
+		else
+			this.foodsp= true;
+	}
+	
+	public void tglMinimal(){
+		if(this.minimalp==true)
+			this.minimalp= false;
+		else
+			this.minimalp= true;
+	}
+	
+	public void tglNature(){
+		if(this.naturep==true)
+			this.naturep= false;
+		else
+			this.naturep= true;
+	}
+}

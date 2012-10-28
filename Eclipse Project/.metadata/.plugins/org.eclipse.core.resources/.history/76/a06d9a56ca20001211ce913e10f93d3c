@@ -1,0 +1,190 @@
+package com.salamandroid.happylook;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ToggleButton;
+
+@SuppressLint("ShowToast")
+public class MainActivity extends Activity {
+	public static final String PREFS_NAME = "MyPrefs";
+	private Preferences pref = new Preferences();
+	
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+              
+        
+        //----Get Preferences-------------------------------------
+        
+        
+        	
+        Log.d("abstract-on create", "value: "+pref.abstractp);
+    }
+
+    protected void onResume(){
+    	super.onResume();
+    	SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+    	
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton1);
+    	ToggleButton bt2 = (ToggleButton)findViewById(R.id.imageButton2);
+    	ToggleButton bt3 = (ToggleButton)findViewById(R.id.imageButton3);
+    	ToggleButton bt4 = (ToggleButton)findViewById(R.id.imageButton4);
+    	ToggleButton bt5 = (ToggleButton)findViewById(R.id.imageButton5);
+    	ToggleButton bt6 = (ToggleButton)findViewById(R.id.imageButton6);
+    	ToggleButton bt7 = (ToggleButton)findViewById(R.id.imageButton7);
+    	ToggleButton bt8 = (ToggleButton)findViewById(R.id.imageButton8);
+    	
+    	
+    	if(!settings.getBoolean("abstract", true)){
+    		pref.abstractp = false;
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_abstract));
+    	}
+        	this.abstractbtn(getCurrentFocus());
+        if(!settings.getBoolean("animals", true))
+        	this.animalsbtn(getCurrentFocus());
+        if(!settings.getBoolean("cars", true))
+        	this.carbtn(getCurrentFocus());
+        if(!settings.getBoolean("cities", true))
+        	this.citybtn(getCurrentFocus());
+        if(!settings.getBoolean("films", true))
+        	this.filmbtn(getCurrentFocus());
+        if(!settings.getBoolean("foods", true))
+        	this.foodbtn(getCurrentFocus());
+        if(!settings.getBoolean("minimal", true))
+        	this.minimalbtn(getCurrentFocus());
+        if(!settings.getBoolean("nature", true))
+        	this.naturebtn(getCurrentFocus());
+        
+    }
+    protected void onStop(){
+        super.onStop();
+
+       // We need an Editor object to make preference changes.
+       // All objects are from android.context.Context
+       
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+    	SharedPreferences.Editor editor = settings.edit();
+    	
+       editor.putBoolean("abstract", pref.abstractp);
+       editor.putBoolean("animals", pref.animalsp);
+       editor.putBoolean("cars", pref.carsp);
+       editor.putBoolean("cities", pref.carsp);
+       editor.putBoolean("films", pref.filmsp);
+       editor.putBoolean("foods", pref.foodsp);
+       editor.putBoolean("minimal", pref.filmsp);
+       editor.putBoolean("nature", pref.naturep);
+       // Commit the edits!
+       editor.commit();
+       
+     }
+
+    public void abstractbtn(View view){
+    	SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+    	SharedPreferences.Editor editor = settings.edit();
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton1);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_abstract));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnabstract));
+    	
+    	pref.tglAbstract();
+    	Log.d("abstract", "value: "+pref.abstractp);
+
+        editor.putBoolean("abstract", pref.abstractp);
+        editor.commit();
+    }
+    
+    public void animalsbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton2);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_animals));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnanimals));
+    	
+    	pref.tglAnimals();
+    }
+    
+    public void carbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton3);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_car));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btncar));
+    	
+    	pref.tglCars();
+    }
+    
+    public void citybtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton4);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_city));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btncity));
+    	
+    	pref.tglCities();
+    }
+
+    
+    public void filmbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton5);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_film));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnfilm));
+    	
+    	pref.tglFilms();
+    }
+    
+    public void foodbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton6);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_food));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnfood));
+    	
+    	pref.tglFoods();
+    }
+
+    public void minimalbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton7);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_minimalistic));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnminimalistic));
+    	
+    	pref.tglMinimal();
+    }
+
+    public void naturebtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton8);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_nature));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnnature));
+    	
+    	pref.tglNature();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+}

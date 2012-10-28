@@ -1,0 +1,151 @@
+what,kind,bundleId,bundleVersion,description,time
+started,bundle,com.microsoft.tfs.client.eclipse,11.0.0.201208021316,"com.microsoft.tfs.client.eclipse",1350812670558
+started,bundle,com.microsoft.tfs.client.eclipse.ui,11.0.0.201208021316,"com.microsoft.tfs.client.eclipse.ui",1350812670888
+started,bundle,org.eclipse.jgit,1.3.0.201202151440-r,"org.eclipse.jgit",1350812671347
+started,bundle,org.eclipse.egit.core,1.3.0.201202151440-r,"org.eclipse.egit.core",1350812671537
+started,bundle,org.eclipse.jsch.core,1.1.300.I20110514-0800,"org.eclipse.jsch.core",1350812672086
+started,bundle,org.eclipse.egit.ui,1.3.0.201202151440-r,"org.eclipse.egit.ui",1350812672419
+opened,view,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.views.ProblemView",1350812672625
+started,bundle,org.eclipse.team.ui,3.6.101.R37x_v20111109-0800,"org.eclipse.team.ui",1350812672638
+started,bundle,org.eclipse.team.cvs.core,3.3.400.I20110510-0800,"org.eclipse.team.cvs.core",1350812673536
+started,bundle,org.eclipse.team.cvs.ui,3.3.401.v20120126-1227,"org.eclipse.team.cvs.ui",1350812673793
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350815172942
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350815233853
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350815235563
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350816129911
+started,bundle,org.eclipse.wst.sse.core,1.1.602.v201112071516,"org.eclipse.wst.sse.core",1350816132060
+started,bundle,org.eclipse.wst.sse.ui,1.3.2.v201201041522,"org.eclipse.wst.sse.ui",1350816132131
+started,bundle,org.eclipse.wst.xml.ui,1.1.202.v201112071516,"org.eclipse.wst.xml.ui",1350816132132
+started,bundle,org.eclipse.wst.xml.core,1.1.602.v201201091944,"org.eclipse.wst.xml.core",1350816133093
+started,bundle,org.eclipse.debug.ui,3.7.102.v20111129-1423_r372,"org.eclipse.debug.ui",1350816134341
+started,bundle,org.eclipse.wst.common.uriresolver,1.1.401.v201004280700,"org.eclipse.wst.common.uriresolver",1350816134904
+started,bundle,org.eclipse.wst.validation,1.2.303.v201202090300,"org.eclipse.wst.validation",1350816137105
+started,bundle,org.eclipse.wst.common.project.facet.core,1.4.201.v201201101553,"org.eclipse.wst.common.project.facet.core",1350816137137
+started,bundle,org.eclipse.wst.dtd.ui,1.0.600.v201103171359,"org.eclipse.wst.dtd.ui",1350816137361
+started,bundle,org.eclipse.emf.common,2.7.0.v20120127-1122,"org.eclipse.emf.common",1350816137478
+opened,editor,com.android.ide.eclipse.adt,20.0.1.v201207132230-403220,"com.android.ide.eclipse.editors.CommonXmlEditor",1350816137700
+started,bundle,org.eclipse.m2e.editor.xml,1.0.200.20111228-1245,"org.eclipse.m2e.editor.xml",1350816137859
+activated,editor,com.android.ide.eclipse.adt,20.0.1.v201207132230-403220,"com.android.ide.eclipse.editors.CommonXmlEditor",1350816138546
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816167490
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816167493
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816167963
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816167968
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816168000
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168002
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168012
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168229
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816168235
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168452
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168459
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168466
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168468
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168579
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168584
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168599
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168604
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168614
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168617
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168626
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168629
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168636
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168639
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168644
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168647
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168652
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168655
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168660
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168663
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168667
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168669
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168675
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168677
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168682
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168684
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168687
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168692
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816168696
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_dark.xml",1350816168743
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168745
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816168999
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816169751
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816169770
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816169772
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816170103
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816170192
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816170197
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816170201
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816170290
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816170294
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816170308
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816170312
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_up_btn.xml",1350816171132
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_input.xml",1350816171145
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171148
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171151
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_down_btn.xml",1350816171169
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171202
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_up_btn.xml",1350816171205
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_input.xml",1350816171208
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171211
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171213
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_down_btn.xml",1350816171217
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171221
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816171229
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light_nodisable.xml",1350816171246
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171251
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_up_btn.xml",1350816171267
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_input.xml",1350816171271
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171273
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171276
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_down_btn.xml",1350816171279
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171284
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_up_btn.xml",1350816171287
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_input.xml",1350816171290
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171293
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171295
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_down_btn.xml",1350816171298
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171302
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_up_btn.xml",1350816171305
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_input.xml",1350816171308
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171311
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171313
+error,log,,,"palette: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\numberpicker_down_btn.xml",1350816171317
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171321
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171325
+error,log,,,"palette: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171330
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816171631
+error,log,,,"activity_main.xml: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\stat_sys_battery_charge.xml",1350816171641
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_light.xml",1350816171644
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816171808
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171810
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816171880
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171882
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816171918
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171920
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816171959
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171961
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816171996
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816171998
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172037
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172040
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172073
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172075
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172112
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172114
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172122
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172124
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172132
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172135
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172142
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172144
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\secondary_text_dark.xml",1350816172150
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172153
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172156
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172161
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172164
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172168
+error,log,,,"activity_main.xml: Failed to configure parser for C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\color\\primary_text_light.xml",1350816172173
+error,log,,,"activity_main.xml: Failed to parse file C:\\Users\\Saman\\AppData\\Local\\Android\\android-sdk\\platforms\\android-14\\data\\res\\drawable\\screen_background_selector_light.xml",1350816172176
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350816218232
+activated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350816218255
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1350816218260

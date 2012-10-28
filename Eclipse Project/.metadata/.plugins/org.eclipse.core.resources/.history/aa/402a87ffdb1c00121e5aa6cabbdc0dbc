@@ -1,0 +1,109 @@
+package com.salamandroid.happylook;
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.Menu;
+import android.view.View;
+import android.widget.ToggleButton;
+
+public class MainActivity extends Activity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        //--define screen dp
+
+    }
+
+    
+    public static float convertDpToPixel(float dp,Context context){
+        Resources resources = context.getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float px = dp * (metrics.densityDpi/160f);
+        return px;
+    }
+
+    public void abstractbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton1);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_abstract));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnabstract));
+    }
+    
+    public void animalsbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton2);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_animals));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnanimals));
+    }
+    
+    public void carbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton3);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_car));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btncar));
+    }
+    
+    public void citybtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton4);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_city));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btncity));
+    }
+
+    
+    public void filmbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton5);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_film));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnfilm));
+    }
+    
+    public void foodbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton6);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_food));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnfood));
+    }
+
+    public void minimalbtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton7);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_minimalistic));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnminimalistic));
+    }
+
+    public void naturebtn(View view){
+    	
+    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton8);
+    	if(bt.isChecked())
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_nature));
+    	else
+    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnnature));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_main, menu);
+        return true;
+    }
+}

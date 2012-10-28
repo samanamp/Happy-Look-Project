@@ -1,0 +1,191 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <ToggleButton
+        android:id="@+id/imageButton1"
+        android:layout_width="100dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/btnabstract" 
+        android:layout_left="@+id/imageButton2"       
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp"
+        android:onClick="abstractbtn"
+        android:textOn=""
+        android:textOff=""
+         />
+
+    <ToggleButton
+        android:id="@+id/imageButton2"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/btnanimals"
+        android:layout_left="@+id/imageButton1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="16dp"
+        android:onClick="animalsbtn"
+        android:textOn=""
+        android:textOff="" />
+
+    <ToggleButton
+        android:id="@+id/imageButton3"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imageButton1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@drawable/btncar"
+        android:onClick="carbtn"
+        android:textOn=""
+        android:textOff="" />
+
+    <ToggleButton
+        android:id="@+id/imageButton4"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignRight="@+id/imageButton2"
+        android:layout_alignTop="@+id/imageButton3"
+        android:background="@drawable/btncity"
+        android:onClick="citybtn"
+        android:textOn=""
+        android:textOff="" />
+
+    <ToggleButton
+        android:id="@+id/imageButton5"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignLeft="@+id/imageButton3"
+        android:layout_below="@+id/imageButton3"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btnfilm"
+        android:onClick="filmbtn"
+        android:textOn=""
+        android:textOff="" />
+
+    <ToggleButton
+        android:id="@+id/imageButton6"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignRight="@+id/imageButton4"
+        android:layout_alignTop="@+id/imageButton5"
+        android:background="@drawable/btnfood" 
+        android:onClick="foodbtn"
+        android:textOn=""
+        android:textOff="" />
+
+    <ToggleButton
+        android:id="@+id/imageButton7"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_below="@+id/imageButton5"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/btnminimalistic" 
+        android:onClick="minimalbtn"
+        android:textOn=""
+        android:textOff=""/>
+
+    <ToggleButton
+        android:id="@+id/imageButton8"
+        android:layout_width="136dp"
+        android:layout_height="68dp"
+        android:layout_alignRight="@+id/imageButton6"
+        android:layout_alignTop="@+id/imageButton7"
+        android:background="@drawable/btnnature"
+        android:onClick="naturebtn"
+        android:textOn=""
+        android:textOff="" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageButton7"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp"
+        android:text="Sunday" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggleButton1"
+        android:layout_alignRight="@+id/imageButton7"
+        android:text="ToggleButton" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggleButton2"
+        android:layout_alignLeft="@+id/imageButton8"
+        android:text="ToggleButton" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toggleButton3"
+        android:layout_alignRight="@+id/imageButton8"
+        android:text="ToggleButton" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/toggleButton1"
+        android:layout_alignLeft="@+id/toggleButton1"
+        android:layout_marginBottom="8dp"
+        android:text="  Sat"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignLeft="@+id/toggleButton2"
+        android:text=" Mon"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/toggleButton3"
+        android:text=" Wed"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/toggleButton4"
+        android:text="   Fri"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageButton7"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="Update On:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
