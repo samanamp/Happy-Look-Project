@@ -256,30 +256,17 @@ public class MainActivity extends Activity {
     
     public void wednesdaybtn(View view){
     	pref.tglWednesday();
-    	File root = android.os.Environment.getExternalStorageDirectory();
-    	WallpaperManager wm = WallpaperManager.getInstance(this);
-    	try {
-			InputStream in = new FileInputStream(root.getAbsolutePath() + "/images/smashing.png");
-			try {
-				wm.setStream(in);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	Context context = this.getBaseContext();
-    	          
-        Toast.makeText(getApplicationContext(), "Wallpaper has been set", 10);
+    	Wallpaper wm = new Wallpaper();
+    	wm.setWallpaper(WallpaperManager.getInstance(this), this.getApplicationContext(), "p.png");
+    	
     }
     
     public void fridaybtn(View view){
     	pref.tglFriday();
     	
     	ImageDownloader id = new ImageDownloader();
-    	id.DownloadFromUrl("http://s1.p30download.com/users/101/ebook/science/Antegral.Khor_p30download.com.rar", "antegral.rar");
+    	id.DownloadFromUrl("http://www.vogella.com/img/lars/LarsVogelArticle8.png", "p.png");
+    	
     }
     
     @Override

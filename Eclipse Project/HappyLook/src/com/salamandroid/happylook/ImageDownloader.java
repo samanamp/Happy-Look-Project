@@ -30,7 +30,7 @@ public class ImageDownloader {
 		           long startTime = System.currentTimeMillis();
 		           Log.d("DownloadManager", "download begining");
 		           Log.d("DownloadManager", "download url:" + url);
-		           Log.d("DownloadManager", "downloaded file name:" +root.getAbsolutePath()+fileName);
+		           Log.d("DownloadManager", "downloaded file name:" +root.getAbsolutePath()+ "/images/"+fileName);
 
 		           /* Open a connection to that URL. */
 		           URLConnection ucon = url.openConnection();
