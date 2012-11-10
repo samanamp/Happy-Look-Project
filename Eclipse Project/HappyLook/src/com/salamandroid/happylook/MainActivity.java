@@ -1,35 +1,31 @@
 package com.salamandroid.happylook;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.WallpaperManager;
-import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 import android.widget.ToggleButton;
 
 @SuppressLint("ShowToast")
 public class MainActivity extends Activity {
 	public static final String PREFS_NAME = "MyPrefs";
 	private Preferences pref = new Preferences();
-	
+	private Intent serviceIntent;
+	//private HPService myservice;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
+        //myservice = new HPService();
               
+        
+        
         
         //----Get Preferences-------------------------------------
         
@@ -119,8 +115,28 @@ public class MainActivity extends Activity {
         else
         	pref.friday=false;
         
-        Log.d("animal-on resume", "value: "+pref.animalsp);
+        Log.d("onCreate", "Service Start");
+        serviceIntent = new Intent(getBaseContext(),HPService.class);
+        serviceIntent.putExtra("preferences", pref);
+        startService(serviceIntent);
+        Log.d("onCreate", "after Service Start");
+        //myservice.setPreferences(pref);
         
+                Log.d("animal-on resume", "value: "+pref.animalsp);
+        
+    }
+    
+    @Override
+    protected void onPause() {
+    	// TODO Auto-generated method stub
+    	super.onPause();
+    	Log.d("onPause","Pausing Program");
+    	stopService(serviceIntent);
+    	serviceIntent = null;
+    	serviceIntent = new Intent(getBaseContext(),HPService.class);
+        serviceIntent.putExtra("preferences", pref);
+        startService(serviceIntent);
+        Log.d("onPause", "after Service Start");    	
     }
     protected void onStop(){
         super.onStop();
@@ -256,17 +272,19 @@ public class MainActivity extends Activity {
     
     public void wednesdaybtn(View view){
     	pref.tglWednesday();
-    	Wallpaper wm = new Wallpaper();
-    	wm.setWallpaper(WallpaperManager.getInstance(this), this.getApplicationContext(), "p.png");
+    	
     	
     }
     
     public void fridaybtn(View view){
     	pref.tglFriday();
     	
-    	ImageDownloader id = new ImageDownloader();
-    	id.DownloadFromUrl("http://www.vogella.com/img/lars/LarsVogelArticle8.png", "p.png");
     	
+    	
+    }
+    
+    public void updateService(){
+    	//myservice.setPreferences(pref);    	
     }
     
     @Override

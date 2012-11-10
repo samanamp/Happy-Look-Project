@@ -1,6 +1,13 @@
 package com.salamandroid.happylook;
 
-public class Preferences {
+import java.io.Serializable;
+
+public class Preferences implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected boolean abstractp = true;
 	protected boolean animalsp= true;
 	protected boolean carsp= true;
@@ -97,4 +104,6 @@ public class Preferences {
 		else
 			this.friday=true;
 	}
+	
+	
 }

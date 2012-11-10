@@ -18,7 +18,7 @@ public class Wallpaper {
 		File root = android.os.Environment.getExternalStorageDirectory();
     	//WallpaperManager wm = WallpaperManager.getInstance(this);
     	try {
-			InputStream in = new FileInputStream(root.getAbsolutePath() + "/images/"+filename);
+			InputStream in = new FileInputStream(root.getAbsolutePath() + "/happylook/"+filename);
 			try {
 				wm.setStream(in);
 			} catch (IOException e) {
@@ -28,7 +28,7 @@ public class Wallpaper {
 			e.printStackTrace();
 		}
     	          
-        Toast.makeText(appcontext, "Wallpaper has been set", 10);
+        //Toast.makeText(appcontext, "Wallpaper has been set", 10);
 	}
 
 }

@@ -19,7 +19,7 @@ public class ImageDownloader {
 		   try {
 		           File root = android.os.Environment.getExternalStorageDirectory();               
 
-		           File dir = new File (root.getAbsolutePath() + "/images");
+		           File dir = new File (root.getAbsolutePath() + "/happylook");
 		           if(dir.exists()==false) {
 		                dir.mkdirs();
 		           }
