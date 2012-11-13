@@ -12,56 +12,61 @@ import org.apache.http.util.ByteArrayBuffer;
 
 import android.util.Log;
 
-public class ImageDownloader {
-	
-	public void DownloadFromUrl(String DownloadUrl, String fileName) {
+public class ImageDownloader
+{
 
-		   try {
-		           File root = android.os.Environment.getExternalStorageDirectory();               
+    private String DIRECTORY_NAME = "HappyLook";
 
-		           File dir = new File (root.getAbsolutePath() + "/happylook");
-		           if(dir.exists()==false) {
-		                dir.mkdirs();
-		           }
+    public void DownloadFromUrl(String DownloadUrlAddress, String fileName)
+    {
+	try {
+	    long startTime = System.currentTimeMillis();
+	    ByteArrayBuffer downloadedFileByteArray = download(getURL(DownloadUrlAddress));
+	    FileOutputStream fos = new FileOutputStream(makeFile(
+		    DIRECTORY_NAME, fileName));
+	    fos.write(downloadedFileByteArray.toByteArray());
+	    fos.flush();
+	    fos.close();
+	    Log.d("DownloadManager",
+		    "download ready in"
+			    + ((System.currentTimeMillis() - startTime) / 1000)
+			    + " sec");
+	} catch (IOException e) {
+	    Log.d("DownloadManager", "Error: " + e);
+	}
+    }
 
-		           URL url = new URL(DownloadUrl); //you can write here any link
-		           File file = new File(dir, fileName);
+    private URL getURL(String DownloadUrlAddress) throws IOException
+    {
+	return new URL(DownloadUrlAddress);
+    }
 
-		           long startTime = System.currentTimeMillis();
-		           Log.d("DownloadManager", "download begining");
-		           Log.d("DownloadManager", "download url:" + url);
-		           Log.d("DownloadManager", "downloaded file name:" +root.getAbsolutePath()+ "/images/"+fileName);
+    private ByteArrayBuffer download(URL url) throws IOException
+    {
+	URLConnection ucon = url.openConnection();
+	InputStream is = ucon.getInputStream();
+	BufferedInputStream bis = new BufferedInputStream(is);
+	ByteArrayBuffer baf = new ByteArrayBuffer(5000);
+	int currentBufferIndex = 0;
+	while ((currentBufferIndex = bis.read()) != -1) {
+	    baf.append((byte) currentBufferIndex);
+	}
+	return baf;
+    }
 
-		           /* Open a connection to that URL. */
-		           URLConnection ucon = url.openConnection();
+    private File makeFile(String directoryName, String fileName)
+    {
+	File file = new File(getDirectory(directoryName), fileName);
+	return file;
+    }
 
-		           /*
-		            * Define InputStreams to read from the URLConnection.
-		            */
-		           InputStream is = ucon.getInputStream();
-		           BufferedInputStream bis = new BufferedInputStream(is);
-
-		           /*
-		            * Read bytes to the Buffer until there is nothing more to read(-1).
-		            */
-		           ByteArrayBuffer baf = new ByteArrayBuffer(5000);
-		           int current = 0;
-		           while ((current = bis.read()) != -1) {
-		              baf.append((byte) current);
-		           }
-
-
-		           /* Convert the Bytes read to a String. */
-		           FileOutputStream fos = new FileOutputStream(file);
-		           fos.write(baf.toByteArray());
-		           fos.flush();
-		           fos.close();
-		           Log.d("DownloadManager", "download ready in" + ((System.currentTimeMillis() - startTime) / 1000) + " sec");
-
-		   } catch (IOException e) {
-		       Log.d("DownloadManager", "Error: " + e);
-		   }
-
-		}
-
+    private File getDirectory(String directoryName)
+    {
+	File root = android.os.Environment.getExternalStorageDirectory();
+	File dir = new File(root.getAbsolutePath() + "/" + directoryName);
+	if (dir.exists() == false) {
+	    dir.mkdirs();
+	}
+	return dir;
+    }
 }

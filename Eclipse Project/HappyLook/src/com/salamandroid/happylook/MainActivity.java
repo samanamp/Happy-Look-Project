@@ -2,7 +2,6 @@ package com.salamandroid.happylook;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.WallpaperManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,284 +11,297 @@ import android.view.View;
 import android.widget.ToggleButton;
 
 @SuppressLint("ShowToast")
-public class MainActivity extends Activity {
-	public static final String PREFS_NAME = "MyPrefs";
-	private Preferences pref = new Preferences();
-	private Intent serviceIntent;
-	//private HPService myservice;
-	
+public class MainActivity extends Activity
+{
+
+    public enum Buttons {
+	ABSTRACT, ANIMALS, CARS, CITIES, FILMS, FOODS, MINIMAL, NATURE, SUNDAY, MONDAY, WEDNESDAY, FRIDAY
+    }
+
+    public static final String PREFS_NAME = "MyPrefs";
+    private Preferences pref = new Preferences();
+    private Intent serviceIntent;
+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        //myservice = new HPService();
-              
-        
-        
-        
-        //----Get Preferences-------------------------------------
-        
-        
-        	
-        Log.d("anmal-on create", "value: "+pref.animalsp);
+    public void onCreate(Bundle savedInstanceState)
+    {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
+	Log.d("onCreate", "Passed");
     }
 
-    protected void onResume(){
-    	super.onResume();
-    	SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-    	
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton1);
-    	ToggleButton bt2 = (ToggleButton)findViewById(R.id.imageButton2);
-    	ToggleButton bt3 = (ToggleButton)findViewById(R.id.imageButton3);
-    	ToggleButton bt4 = (ToggleButton)findViewById(R.id.imageButton4);
-    	ToggleButton bt5 = (ToggleButton)findViewById(R.id.imageButton5);
-    	ToggleButton bt6 = (ToggleButton)findViewById(R.id.imageButton6);
-    	ToggleButton bt7 = (ToggleButton)findViewById(R.id.imageButton7);
-    	ToggleButton bt8 = (ToggleButton)findViewById(R.id.imageButton8);
-    	ToggleButton bt9 = (ToggleButton)findViewById(R.id.toggleButton1);
-    	ToggleButton bt10 = (ToggleButton)findViewById(R.id.toggleButton2);
-    	ToggleButton bt11 = (ToggleButton)findViewById(R.id.toggleButton3);
-    	ToggleButton bt12 = (ToggleButton)findViewById(R.id.toggleButton4);
-    	
-    	if(settings.getBoolean("abstract", true)==false){
-    		pref.abstractp = false;
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_abstract));
-    		bt.setChecked(true);
-    	}
-    	Log.d("animal-on resume", "valueb: "+pref.animalsp);
-        if(settings.getBoolean("animals", true)==false){
-        	pref.animalsp = false;
-        	bt2.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_animals));
-        	bt2.setChecked(true);
-        }
-        Log.d("animal-on resume", "valuea: "+pref.animalsp);
-        if(settings.getBoolean("cars", true)==false){
-        	pref.carsp=false;
-        	bt3.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_car));
-        	bt3.setChecked(true);
-        }        	
-        if(settings.getBoolean("cities", true)==false){
-        	pref.citiesp=false;
-        	bt4.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_city));
-        	bt4.setChecked(true);
-        }
-        if(settings.getBoolean("films", true)==false){
-        	pref.filmsp=false;
-        	bt5.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_film));
-        	bt5.setChecked(true);
-        }
-        if(settings.getBoolean("foods", true)==false){
-        	pref.foodsp=false;
-        	bt6.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_food));
-        	bt6.setChecked(true);
-        }        	
-        if(settings.getBoolean("minimal", true)==false){
-        	pref.minimalp=false;
-        	bt7.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_minimalistic));
-        	bt7.setChecked(true);
-        }        	
-        if(settings.getBoolean("nature", true)==false){
-        	pref.naturep=false;
-        	bt8.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_nature));
-        	bt8.setChecked(true);
-        }
-        
-        if(settings.getBoolean("sunday", true))
-        	bt9.setChecked(true);
-        else
-        	pref.sunday=false;
-        
-        if(settings.getBoolean("monday", true))
-        	bt10.setChecked(true);
-        else
-        	pref.monday=false;
-        
-        if(settings.getBoolean("wednesday", true))
-        	bt11.setChecked(true);
-        else
-        	pref.wednesday=false;
-        
-        if(settings.getBoolean("friday", true))
-        	bt12.setChecked(true);
-        else
-        	pref.friday=false;
-        
-        Log.d("onCreate", "Service Start");
-        serviceIntent = new Intent(getBaseContext(),HPService.class);
-        serviceIntent.putExtra("preferences", pref);
-        startService(serviceIntent);
-        Log.d("onCreate", "after Service Start");
-        //myservice.setPreferences(pref);
-        
-                Log.d("animal-on resume", "value: "+pref.animalsp);
-        
+    protected void onResume()
+    {
+	Log.d("onResume", "Before Super");
+	super.onResume();
+	Log.d("onResume", "After Super");
+	loadPreferences();
+	Log.d("onResume", "After Load Preferences");
+	startServiceWithNewConfig();
+	updateUIWithNewPref();
+	Log.d("onResume", "After UI With Pref");
     }
-    
+
+    private void loadPreferences()
+    {
+	SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+	pref.abstractp = settings.getBoolean("abstract", true);
+	pref.animalsp = settings.getBoolean("animals", true);
+	pref.carsp = settings.getBoolean("cars", true);
+	pref.citiesp = settings.getBoolean("cities", true);
+	pref.filmsp = settings.getBoolean("films", true);
+	pref.foodsp = settings.getBoolean("foods", true);
+	pref.minimalp = settings.getBoolean("minimal", true);
+	pref.naturep = settings.getBoolean("nature", true);
+	pref.sunday = settings.getBoolean("sunday", true);
+	pref.monday = settings.getBoolean("monday", true);
+	pref.wednesday = settings.getBoolean("wednesday", true);
+	pref.friday = settings.getBoolean("friday", true);
+	Log.d("Load Pref", "Abstract Val:" + pref.abstractp);
+	Log.d("Load Pref", "Animals Val:" + pref.animalsp);
+	Log.d("Load Pref", "cars Val:" + pref.carsp);
+	Log.d("Load Pref", "cities Val:" + pref.citiesp);
+    }
+
+    private void updateUIWithNewPref()
+    {
+	updateButton(Buttons.ABSTRACT, pref.abstractp);
+	updateButton(Buttons.ANIMALS, pref.animalsp);
+	updateButton(Buttons.CARS, pref.carsp);
+	updateButton(Buttons.CITIES, pref.citiesp);
+	updateButton(Buttons.FILMS, pref.filmsp);
+	updateButton(Buttons.FOODS, pref.foodsp);
+	updateButton(Buttons.MINIMAL, pref.minimalp);
+	updateButton(Buttons.NATURE, pref.naturep);
+	updateButton(Buttons.SUNDAY, pref.sunday);
+	updateButton(Buttons.MONDAY, pref.monday);
+	updateButton(Buttons.WEDNESDAY, pref.wednesday);
+	updateButton(Buttons.FRIDAY, pref.friday);
+    }
+
+    private void updateButton(Buttons buttonName, boolean state)
+    {
+	switch (buttonName) {
+	    case ABSTRACT:
+		ToggleButton abstractBT = (ToggleButton) findViewById(R.id.imageButton1);
+		abstractBT.setChecked(state);
+		if (abstractBT.isChecked())
+		    abstractBT.setBackgroundDrawable(getResources()
+			    .getDrawable(
+				    R.drawable.btnabstract));
+		else
+		    abstractBT.setBackgroundDrawable(getResources()
+			    .getDrawable(
+				    R.drawable.p_abstract));
+		break;
+	    case ANIMALS:
+		ToggleButton animalsBT = (ToggleButton) findViewById(R.id.imageButton2);
+		animalsBT.setChecked(state);
+		if (animalsBT.isChecked())
+		    animalsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btnanimals));
+		else
+		    animalsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_animals));
+		break;
+	    case CARS:
+		ToggleButton carsBT = (ToggleButton) findViewById(R.id.imageButton3);
+		carsBT.setChecked(state);
+		if (carsBT.isChecked())
+		    carsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btncar));
+		else
+		    carsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_car));
+		break;
+	    case CITIES:
+		ToggleButton citiesBT = (ToggleButton) findViewById(R.id.imageButton4);
+		citiesBT.setChecked(state);
+		if (citiesBT.isChecked())
+		    citiesBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btncity));
+		else
+		    citiesBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_city));
+		break;
+	    case FILMS:
+		ToggleButton filmsBT = (ToggleButton) findViewById(R.id.imageButton5);
+		filmsBT.setChecked(state);
+		if (filmsBT.isChecked())
+		    filmsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btnfilm));
+		else
+		    filmsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_film));
+		break;
+	    case FOODS:
+		ToggleButton foodsBT = (ToggleButton) findViewById(R.id.imageButton6);
+		foodsBT.setChecked(state);
+		if (foodsBT.isChecked())
+		    foodsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btnfood));
+		else
+		    foodsBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_food));
+		break;
+	    case MINIMAL:
+		ToggleButton minimalBT = (ToggleButton) findViewById(R.id.imageButton7);
+		minimalBT.setChecked(state);
+		if (minimalBT.isChecked())
+		    minimalBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btnminimalistic));
+		else
+		    minimalBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_minimalistic));
+		break;
+	    case NATURE:
+		ToggleButton natureBT = (ToggleButton) findViewById(R.id.imageButton8);
+		natureBT.setChecked(state);
+		if (natureBT.isChecked())
+		    natureBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.btnnature));
+		else
+		    natureBT.setBackgroundDrawable(getResources().getDrawable(
+			    R.drawable.p_nature));
+		break;
+	    case SUNDAY:
+		ToggleButton sundayBT = (ToggleButton) findViewById(R.id.toggleButton1);
+		sundayBT.setChecked(state);
+		break;
+	    case MONDAY:
+		ToggleButton mondayBT = (ToggleButton) findViewById(R.id.toggleButton2);
+		mondayBT.setChecked(state);
+		break;
+	    case WEDNESDAY:
+		ToggleButton wednesdayBT = (ToggleButton) findViewById(R.id.toggleButton3);
+		wednesdayBT.setChecked(state);
+		break;
+	    case FRIDAY:
+		ToggleButton fridayBT = (ToggleButton) findViewById(R.id.toggleButton4);
+		fridayBT.setChecked(state);
+		break;
+	}
+    }
+
+    private void startServiceWithNewConfig()
+    {
+	serviceIntent = new Intent(getBaseContext(), HPService.class);
+	serviceIntent.putExtra("preferences", pref);
+	startService(serviceIntent);
+    }
+
     @Override
-    protected void onPause() {
-    	// TODO Auto-generated method stub
-    	super.onPause();
-    	Log.d("onPause","Pausing Program");
-    	stopService(serviceIntent);
-    	serviceIntent = null;
-    	serviceIntent = new Intent(getBaseContext(),HPService.class);
-        serviceIntent.putExtra("preferences", pref);
-        startService(serviceIntent);
-        Log.d("onPause", "after Service Start");    	
-    }
-    protected void onStop(){
-        super.onStop();
-
-       // We need an Editor object to make preference changes.
-       // All objects are from android.context.Context
-       
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-    	SharedPreferences.Editor editor = settings.edit();
-    	
-       editor.putBoolean("abstract", pref.abstractp);
-       editor.putBoolean("animals", pref.animalsp);
-       editor.putBoolean("cars", pref.carsp);
-       editor.putBoolean("cities", pref.citiesp);
-       editor.putBoolean("films", pref.filmsp);
-       editor.putBoolean("foods", pref.foodsp);
-       editor.putBoolean("minimal", pref.minimalp);
-       editor.putBoolean("nature", pref.naturep);
-       editor.putBoolean("sunday", pref.sunday);
-       editor.putBoolean("monday", pref.monday);
-       editor.putBoolean("wednesday", pref.wednesday);
-       editor.putBoolean("friday", pref.friday);
-       
-       // Commit the edits!
-       editor.commit();
-       Log.d("animal-on stop", "value: "+pref.animalsp);
-       Log.d("animal-on stop-pref", "value: "+settings.getBoolean("animals", true));
-       
-     }
-
-    public void abstractbtn(View view){
-    	SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-    	SharedPreferences.Editor editor = settings.edit();
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton1);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_abstract));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnabstract));
-    	
-    	pref.tglAbstract();
-    	Log.d("abstract", "value: "+pref.abstractp);
-
-        editor.putBoolean("abstract", pref.abstractp);
-        editor.commit();
-    }
-    
-    public void animalsbtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton2);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_animals));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnanimals));
-    	
-    	pref.tglAnimals();
-    }
-    
-    public void carbtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton3);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_car));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btncar));
-    	
-    	pref.tglCars();
-    }
-    
-    public void citybtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton4);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_city));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btncity));
-    	
-    	pref.tglCities();
+    protected void onPause()
+    {
+	super.onPause();
+	restartServiceWithNewConfigs();
     }
 
-    
-    public void filmbtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton5);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_film));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnfilm));
-    	
-    	pref.tglFilms();
-    }
-    
-    public void foodbtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton6);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_food));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnfood));
-    	
-    	pref.tglFoods();
+    private void restartServiceWithNewConfigs()
+    {
+	stopService(serviceIntent);
+	serviceIntent = null; // for garbage collection
+	startServiceWithNewConfig();
     }
 
-    public void minimalbtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton7);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_minimalistic));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnminimalistic));
-    	
-    	pref.tglMinimal();
+    protected void onStop()
+    {
+	super.onStop();
+	savePreferences();
     }
 
-    public void naturebtn(View view){
-    	
-    	ToggleButton bt = (ToggleButton)findViewById(R.id.imageButton8);
-    	if(bt.isChecked())
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.p_nature));
-    	else
-    		bt.setBackgroundDrawable(getResources().getDrawable(R.drawable.btnnature));
-    	
-    	pref.tglNature();
+    private void savePreferences()
+    {
+	SharedPreferences preferencesStorage = getSharedPreferences(PREFS_NAME,
+		0);
+	SharedPreferences.Editor prefStorageEditor = preferencesStorage.edit();
+	prefStorageEditor.putBoolean("abstract", pref.abstractp);
+	prefStorageEditor.putBoolean("animals", pref.animalsp);
+	prefStorageEditor.putBoolean("cars", pref.carsp);
+	prefStorageEditor.putBoolean("cities", pref.citiesp);
+	prefStorageEditor.putBoolean("films", pref.filmsp);
+	prefStorageEditor.putBoolean("foods", pref.foodsp);
+	prefStorageEditor.putBoolean("minimal", pref.minimalp);
+	prefStorageEditor.putBoolean("nature", pref.naturep);
+	prefStorageEditor.putBoolean("sunday", pref.sunday);
+	prefStorageEditor.putBoolean("monday", pref.monday);
+	prefStorageEditor.putBoolean("wednesday", pref.wednesday);
+	prefStorageEditor.putBoolean("friday", pref.friday);
+	prefStorageEditor.commit();
     }
-    
-    public void sundaybtn(View view){
-    	pref.tglSunday();
+
+    public void abstractbtn(View view)
+    {
+	pref.tglAbstract();
+	updateButton(Buttons.ABSTRACT, pref.abstractp);
     }
-    
-    public void mondaybtn(View view){
-    	pref.tglMonday();
+
+    public void animalsbtn(View view)
+    {
+	pref.tglAnimals();
+	updateButton(Buttons.ANIMALS, pref.animalsp);
     }
-    
-    public void wednesdaybtn(View view){
-    	pref.tglWednesday();
-    	
-    	
+
+    public void carbtn(View view)
+    {
+	pref.tglCars();
+	updateButton(Buttons.CARS, pref.carsp);
     }
-    
-    public void fridaybtn(View view){
-    	pref.tglFriday();
-    	
-    	
-    	
+
+    public void citybtn(View view)
+    {
+	pref.tglCities();
+	updateButton(Buttons.CITIES, pref.citiesp);
     }
-    
-    public void updateService(){
-    	//myservice.setPreferences(pref);    	
+
+    public void filmbtn(View view)
+    {
+	pref.tglFilms();
+	updateButton(Buttons.FILMS, pref.filmsp);
     }
-    
+
+    public void foodbtn(View view)
+    {
+	pref.tglFoods();
+	updateButton(Buttons.FOODS, pref.foodsp);
+    }
+
+    public void minimalbtn(View view)
+    {
+	pref.tglMinimal();
+	updateButton(Buttons.MINIMAL, pref.minimalp);
+    }
+
+    public void naturebtn(View view)
+    {
+	pref.tglNature();
+	updateButton(Buttons.NATURE, pref.naturep);
+    }
+
+    public void sundaybtn(View view)
+    {
+	pref.tglSunday();
+    }
+
+    public void mondaybtn(View view)
+    {
+	pref.tglMonday();
+    }
+
+    public void wednesdaybtn(View view)
+    {
+	pref.tglWednesday();
+    }
+
+    public void fridaybtn(View view)
+    {
+	pref.tglFriday();
+    }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+	getMenuInflater().inflate(R.menu.activity_main, menu);
+	return true;
     }
 }
